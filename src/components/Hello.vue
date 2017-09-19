@@ -22,24 +22,26 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      reply:[{content:'你好你好', type:'r'}],
+      reply:[],
       sendmsg:[],
-      userid:'zwx', 
+      userid:this.$route.query.userid,
       inputmsg:'',
-      address:''
+      address:'',
+       post: null,
+      error: null
     }
   },
-  created(){
+  created(){  
       axios.post('/baidu')
         .then((response)=>{
           this.address = response.data.content.address_detail.city
-          console.log(response)
         })
         .catch(function(err){
           console.log(err)
         })
-      
+      this.reply.push({type:'r',content:'hi,'+this.userid})
   },
+ 
   methods:{
     send:function(){
       this.reply.push({type:'m',content:this.inputmsg});
@@ -52,7 +54,6 @@ export default {
       .then((response) =>{
         console.log(response);
         this.reply.push({type:'r',content:response.data.text});
-        console.log(this.reply)
         this.inputmsg=''
       })
       .catch((error) =>{
@@ -83,7 +84,7 @@ a {
   height: 50px;
   line-height: 50px;
   border-bottom: 1px solid #aaa;
-  background-color: rgba(0,100,200,.5);
+  background-color: rgba(2, 12, 22, 0.5);
 }
 .top>h1{
   font-size: 18px;
