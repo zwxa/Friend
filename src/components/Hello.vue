@@ -6,6 +6,7 @@
         <div class="chat-box" v-for="msg in reply">
           <li :class="{'robot':msg.type==='r','me':msg.type==='m'}">
           <span v-show="msg.type==='m'">{{address}}</span><p>{{msg.content}}</p>
+          <a v-show="msg.url" :href="msg.url">{{msg.url}}</a>
           </li>
         </div>
       </div>
@@ -53,7 +54,7 @@ export default {
       })
       .then((response) =>{
         console.log(response);
-        this.reply.push({type:'r',content:response.data.text});
+        this.reply.push({type:'r',content:response.data.text,url:response.data.url});
         this.inputmsg=''
       })
       .catch((error) =>{
@@ -128,6 +129,7 @@ a {
   line-height: 24px;
   border-radius: 5px;
   border: none;
+  padding: 2px;
   position: absolute;
   top: 50%;
   left: 50%;
