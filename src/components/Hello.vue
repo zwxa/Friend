@@ -115,27 +115,6 @@ a {
   font-size: 12px;
   color: #050505;
 }
-
-.bottom{
-  width: 100%;
-  height: 40px;
-  position: fixed;
-  bottom: -1px;
-  background-color: rgba(0,0,0,.2);
-}
-.bottom>input{
-  width: 80%;
-  height: 24px;
-  line-height: 24px;
-  border-radius: 5px;
-  border: none;
-  padding: 2px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%); 
-  transition: ease;
-}
 .warpper .content li{
   display: inline-block;
   position: relative;
@@ -156,6 +135,7 @@ a {
   left: -20px;
 
 }
+
 .chat-box{
   margin: 4px;
 }
@@ -189,4 +169,27 @@ a {
     display:block;
     clear:both;
 }
+
+.bottom{
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  bottom: -1px;
+  background-color: rgba(0,0,0,.2);
+}
+.bottom>input{
+  width: 80%;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 5px;
+  border: none;
+  padding: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  transition: ease;
+}
+
+
 </style>
