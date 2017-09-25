@@ -8,8 +8,6 @@
 </template>
 
 <script>
-import Vidage from 'Vidage';
-
 export default {
 	data () {
 		return {
@@ -48,7 +46,7 @@ opacity: .8;
 	transform: translate(-50%,-50%);
 	color:#fff;
 }
-.box input{
+.login .box input{
 	height: 24px;
 	line-height: 24px;
 	border-radius: 4px;
